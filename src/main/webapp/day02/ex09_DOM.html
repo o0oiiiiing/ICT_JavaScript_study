@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="msg1">Hello World</p>
+	<p>
+		<span id="msg2">Welcome JS</span>
+	</p>
+	<p id="msg3">서울시 마포구 신수동</p>
+
+	<p id="res"></p>
+	<script type="text/javascript">
+		// let 변수 = 선택기.innerHTML
+		// 선택기에 해당 되는 요소의 content를 가져와서 변수에 저장
+		// getter
+		let str = document.querySelector("#msg1").innerHTML;
+		console.log(str);
+
+		// id가 res인 요소에 id가 msg1인 요소의 content를 넣자
+		document.querySelector("#res").innerHTML = str;
+
+		// html 요소변경
+		// 내용변경 => innerHTML
+		// 속성변경 => .속성
+		// CSS변경 => .style.property
+
+		// setter
+		document.querySelector("#msg1").innerHTML = "<h2>KOREA SEOUL</h2>";
+		document.querySelector("#msg1").align = "center";
+		document.querySelector("#msg1").style.color = "tomato";
+
+		document.getElementById("msg3").innerHTML = "<h2>KOREA SEOUL</h2>";
+		document.getElementById("msg3").align = "center";
+		document.getElementById("msg3").style.color = "tomato";
+	</script>
+</body>
+</html>

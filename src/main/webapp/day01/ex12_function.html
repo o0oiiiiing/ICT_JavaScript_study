@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	document.write("전~~~");
+	// msg1(); 오류
+</script>
+<script type="text/javascript">
+	// 호이스팅 : 선언한 내용 맨 처음으로 올리는 특징
+	msg1();
+	function msg1() {
+		document.write("<p>hi~~~</p>");
+	}
+
+	function msg1() {
+		document.write("<p>hello~~~</p>");
+	}
+</script>
+<script type="text/javascript">
+	msg1();
+	// msg2(); 오류, 익명은 호이스팅이 안된다.
+	let msg2 = function() {
+		document.write("<p>hi 222~</p>");
+	};
+	msg2();
+</script>
+<script type="text/javascript">
+	function msg3() {
+		document.write("<p>1111~~~</p>");
+	}
+	// var는 상관없지만, let는 오류 발생
+	/* let msg3 = function() {
+		document.write("<p>22222222~~~</p>")
+	} */
+	msg3();
+</script>
+</head>
+<body>
+	<script type="text/javascript">
+		msg1();
+	</script>
+</body>
+</html>

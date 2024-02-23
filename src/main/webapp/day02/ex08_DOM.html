@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM(Document Object Model)</title>
+</head>
+<body>
+	<!-- 
+DOM : 문서의 구조화된 표현을 제공하며 프로그래밍 언어가
+	  DOM 구조에 접근할 수 있는 방법을 제공하여
+	  문서의 구조, 스타일, 내용 등을 변경할 수 있게 돕는다.
+	  그래서 DOM 이용해서 CSS나 자바스크립트에서
+	  문서의 구조, 스타일, 내용등을 변경할 수 있다.
+	  
+** 구조화된 표현 = 계층구조 = 족보
+	= 부모, 자식, 형제로 요소(element)를 표현한다.
+ -->
+	<section id="wrap">
+		<article class="box1">TEXT1</article>
+		<article class="box2">TEXT2</article>
+		<article class="box3">TEXT3</article>
+	</section>
+
+	<script type="text/javascript">
+		// 아이디 선택 - 한개
+		const v1 = document.getElementById("wrap");
+		console.log(v1);
+		
+		// 클래스 선택 - 한개 또는 여러개
+		const v2 = document.getElementsByClassName("box1");
+		for(let k of v2){
+			console.log(k);
+		}
+		
+		// 요소 선택 - 한개 또는 여러개
+		const v3 = document.getElementsByTagName("article");
+		for(let k of v3){
+			console.log(k);
+		}
+	</script>
+</body>
+</html>

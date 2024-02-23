@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 매개변수를 함수로 사용 => 콜백함수
+	function exec(f) {
+		// 함수 호출
+		f;
+	}
+
+	function hello_1() {
+		document.write("즐거운 오전 입니다.");
+	}
+	function hello_2() {
+		document.write("점심식사 하셨나요?");
+	}
+	function hello_3() {
+		document.write("즐거운 오후 되세요");
+	}
+	function hello_4() {
+		document.write("안녕히 주무세요");
+	}
+	function hello_5() {
+		document.write("오늘도 무사히");
+	}
+</script>
+</head>
+<body>
+	<script type="text/javascript">
+		let time = 20;
+		let k = '';
+		if (time < 12) {
+			k = hello_1();
+		} else if (time >= 12 && time <= 14) {
+			k = hello_2();
+		} else if (time >= 15 && time <= 19) {
+			k = hello_3();
+		} else if (time >= 22) {
+			k = hello_4();
+		} else {
+			k = hello_5();
+		}
+		exec(k);
+	</script>
+
+</body>
+</html>

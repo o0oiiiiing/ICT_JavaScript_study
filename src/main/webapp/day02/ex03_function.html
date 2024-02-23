@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>콜백함수</title>
+<script type="text/javascript">
+	function myfunc() {
+		alert("경고메세지-1");
+	}
+	function send_go1() {
+		// 3초 후에 myfunc 함수 호출
+		setTimeout(myfunc, 3000);
+	}
+	function send_go2() {
+		// 3초 후에 익명함수를 실행해 주세요
+		setTimeout(function() {
+			alert("경고메세지-2")
+		}, 3000);
+	}
+	function send_go3() {
+		// 3초 후에 화살표함수를 실행해 주세요
+		setTimeout(() => {
+			alert("경고메세지-3")
+		}, 3000);
+	}
+</script>
+</head>
+<body>
+	<!-- ** 콜백함수란 매개변수를 함수로 전달받아, 함수의 내부에서 실행하는 함수 -->
+	<button onclick="send_go1()">눌러주세요</button>
+	<button onclick="send_go2()">눌러주세요</button>
+	<button onclick="send_go3()">눌러주세요</button>
+</body>
+</html>

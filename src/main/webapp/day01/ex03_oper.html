@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연산자</title>
+<script type="text/javascript">
+	let myInt = 5;
+	let myFloat = 6.667;
+	// 정수와 실수의 타입은 number이다.
+	console.log(`myInt = ${myInt}`);
+	console.log(typeof myInt);
+	
+	console.log(`myFloat = ${myFloat}`);
+	console.log(typeof myFloat);
+	
+	// 실수일 때 고정된 소수점 자리수로 반올림 하려면 toFixed() 메서드 사용하자
+	let num1 = 1.7666548;
+	let res = num1.toFixed(3);
+	console.log(res);
+	
+	// 문자를 숫자로 변경하자. Number() 사용
+	let num2 = "75";
+	res = num2 += 5;
+	console.log(res + ', ' + typeof res);
+	
+	res = Number(num2) + 5;
+	console.log(res + ', ' + typeof res);
+	
+	res = Number("한국") + 5; // NaN (Not a Number) → 숫자자리에 맞지 않는 문자가 들어가 있다.
+	console.log(res + ', ' + typeof res);
+	
+	let su1 = 7;
+	let su2 = 3;
+	document.write("<h2>");
+	document.write("<p>산술 연산자(+, -, *, /, %, **)</p>");
+	document.write(su1 + "+" + su2 + "=" + (su1 + su2) + "<br>");
+	document.write(su1 + "-" + su2 + "=" + (su1 - su2) + "<br>");
+	document.write(su1 + "*" + su2 + "=" + (su1 * su2) + "<br>");
+	document.write(su1 + "/" + su2 + "=" + (su1 / su2).toFixed(1) + "<br>");
+	document.write(su1 + "%" + su2 + "=" + (su1 % su2) + "<br>");
+	document.write(su1 + "**" + su2 + "=" + (su1 ** su2) + "<br>");
+	
+	document.write("<p>증감 연산자 (++, --)</p>");
+	// 숫자에 직접 증감 연산자를 사용하지 못하고 변수를 이용해야 된다.
+	// document.write(++3); 오류
+	
+	let num3 = 4;
+	document.write(++num3 + "<br>"); // 5
+	document.write(num3++ + "<br>"); // 5
+	document.write(num3 + "<br>"); // 6
+	
+	document.write("<p>대입 연산자 (+=, -=, *=, /=)</p>");
+	su1 = 7;
+	su2 = 3;
+	
+	su1 += 7;
+	document.write("su1 += 7 → " + su1 + "<br>"); // 14
+	
+	su1 -= 7;
+	document.write("su1 += 7 → " + su1 + "<br>"); // 7
+	
+	su1 *= 7;
+	document.write("su1 += 7 → " + su1 + "<br>"); // 49
+	
+	su1 /= 7;
+	document.write("su1 += 7 → " + su1 + "<br>"); // 7
+	
+	document.write("<p>비교 연산자 (>, >=, <, <=, ==, !=, ===, !==)</p>");
+	su1 = 7;
+	su2 = 3;
+	
+	document.write(`su1 >= su2 = ${su1 >= su2} <br>`);
+	document.write(`su1 <= su2 = ${su1 <= su2} <br>`);
+	document.write(`su1 == su2 = ${su1 == su2} <br>`);
+	document.write(`su1 != su2 = ${su1 != su2} <br>`);
+	
+	document.write("<p>비교 연산자 주의 사항</p>");
+	su1 = 1000;
+	su2 = "1000";
+	document.write(`${su1} == ${su2} = ${su1 == su2} <br>`); // true
+	document.write(`${su1} != ${su2} = ${su1 != su2} <br>`); // flase
+	// ===는 자료형과 데이터가 모두 일치해야만 true가 된다.
+	document.write(`${su1} === ${su2} = ${su1 === su2} <br>`); // false
+	document.write(`${su1} !== ${su2} = ${su1 !== su2} <br>`); // true
+	
+	su1 = true;
+	su2 = 1;
+	document.write(`${su1} == ${su2} = ${su1 == su2} <br>`); // true
+	document.write(`${su1} === ${su2} = ${su1 === su2} <br>`); // false
+	
+	su1 = false;
+	su2 = 0;
+	document.write(`${su1} == ${su2} = ${su1 == su2} <br>`); // true
+	document.write(`${su1} === ${su2} = ${su1 === su2} <br>`); // false
+	
+	document.write("<p>논리 연산자 (&&, ||, !)</p>");
+	su1 = true;
+	su2 = false;
+	document.write(`${su1} && ${su1} = ${su1 && su1} <br>`); // true
+	document.write(`${su1} && ${su2} = ${su1 && su2} <br>`); // false
+	document.write(`${su2} && ${su1} = ${su2 && su1} <br>`); // false
+	document.write(`${su2} && ${su2} = ${su2 && su2} <br>`); // false
+	
+	document.write(`${su1} || ${su1} = ${su1 || su1} <br>`); // true
+	document.write(`${su1} || ${su2} = ${su1 || su2} <br>`); // true
+	document.write(`${su2} || ${su1} = ${su2 || su1} <br>`); // true
+	document.write(`${su2} || ${su2} = ${su2 || su2} <br>`); // false
+	
+	document.write("<p>삼항 연산자</p>");
+	// 결과 = 조건식 ? (참일때 : 거짓일때)
+	// 자바에서는 결과, 참일때 결과, 거짓일때 결과 모두 같은 자료형이어야 한다.
+	// 하지만 자바스크립트에서는 상관없다.
+	su1 = 75;
+	
+	// su1이 60이상이면 합격, 아니면 불합격을 res에 저장하자.
+	res = su1>=60? "합격" : "불합격"
+	document.write(`'res = ' ${res}`);
+	
+	document.write("</h2>");
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

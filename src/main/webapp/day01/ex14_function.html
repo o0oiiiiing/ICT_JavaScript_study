@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 화살표 함수는 익명함수에서만 사용할 수 있다.
+	// let|const 변수이름 = (매개변수) => {힘수 내용};
+	
+	// 매개변수 없음
+	const hi = function() {
+		return "hi";
+	}
+	
+	const hi2 = () => {return "hi2"};
+	
+	// {}, return 생략되어 있다. (한줄일 때)
+	const hi3 = () => "hi2";
+	
+	// 매개변수 하나일 때
+	const k1 = function (name){
+		document.write(name + "님 <br>");
+	};
+	
+	const k2 = (name) => {return name + "님"};
+	const k3 = name => name + "님";
+	
+	k1("임꺽정");
+	document.write(k2("홍길동") + "<br>");
+	document.write(k3("일지매") + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 : Object</title>
+<script type="text/javascript">
+	// 자바스크립트에서는 객체를 Object라고 한다.
+	// 객체 : properties(상태값)과 function(기능)을 가지고 있다.
+
+	// 방법1
+	let obj = new Object();
+	// 상태값
+	obj["name"] = "홍길동";
+	obj["age"] = 14;
+	obj["addr"] = "서울";
+	obj["salary"] = 4800;
+
+	document.write("<p>" + obj["name"] + "</p>");
+	document.write("<p>" + obj.age + "</p>");
+	document.write(`<p> ${obj["addr"]} </p>`);
+	document.write(`<p> ${obj.salary} </p>`);
+
+	// 방법2
+	let obj2 = {
+		name : "임꺽정",
+		age : 24,
+		addr : "함경도",
+		salary : 5000
+	};
+	document.write("<p>" + obj2["name"] + "</p>");
+	document.write("<p>" + obj2["age"] + "</p>");
+	document.write(`<p> ${obj2.addr} </p>`);
+	document.write(`<p> ${obj2.salary} </p>`);
+	document.write("<hr>")
+
+	// 방법3
+	// 자바의 this는 자기자신을 뜻한다.
+	// 자바스크립트의 this는 호출할 때 해당 this가 결정된다.
+	// 실행 중에는 할당으로 설정할 수 없고, 함수를 호출할 때 마다 다를 수 있다.
+	// 자기자신 보다는 호출한 객체를 지정한다.
+	let obj3 = {
+		name : "장길산",
+		age : 38,
+		/* 함수 */
+		job : function() {
+			return this.age - 24;
+		},
+		prn : function() {
+			return this.name + ", " + this.age + ", " + this.job();
+		}
+	}
+	
+	document.write(`<p> ${obj3.name} </p>`);
+	document.write(`<p> ${obj3.age} </p>`);
+	document.write(`<p> ${obj3.job()} </p>`);
+	document.write("<hr>")
+	document.write(`<p> ${obj3.prn()} </p>`);
+</script>
+</head>
+<body>
+
+</body>
+</html>

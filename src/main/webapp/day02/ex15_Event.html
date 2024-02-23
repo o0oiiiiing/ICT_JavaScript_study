@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트</title>
+<link rel="stylesheet" href="../css/ex15.css">
+<script defer src="../js/ex15.js"></script>
+</head>
+<body>
+	<div id="item">
+		<img src="../images/flower.jpg">
+		<button class="over" id="open" onclick="showDetail()">상세 설명
+			보기</button>
+		<div id="desc" class="detail">
+			<h4>등심붓꽃</h4>
+			<p>줄기는 곧추서며, 높이 20~30cm, 납작하고, 아래쪽에 좁은 날개가 2개 있다. 잎은 줄기 아래쪽에 여러
+				장이 어긋나며, 납작한 선형, 길이 4~8cm, 폭 2~3mm, 끝이 뾰족하다.</p>
+			<button id="close" onclick="hiddenDetail()">상세 설명 닫기</button>
+		</div>
+	</div>
+	<div id="item2">
+		<button id="btnPlus">plus</button>
+		<span id="res">0</span>
+		<button id="btnMinus">minus</button>
+	</div>
+</body>
+</html>

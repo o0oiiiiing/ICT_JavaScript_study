@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>조건문 : switch</title>
+<script type="text/javascript">
+	/* 
+	 switch (key) {
+		 case value1: key와 value가 같을 때 실행 break;
+	 	 case value2: key와 value가 같을 때 실행 break;
+		 case value3: key와 value가 같을 때 실행 break;
+		 case value4: key와 value가 같을 때 실행 break;
+	 	 default: 나머지 break;
+	 } 
+	 */
+	// 변수 k1이 a,A이면 아프리카 b,B이면 브라질
+	// c,C이면 캐나다 나머지는 대한민국
+	let k1 = 'A';
+	let res = '';
+	switch (k1) {
+	case 'a':
+	case 'A':
+		res = '아프리카';
+		break;
+	case 'b':
+	case 'B':
+		res = '브라질';
+		break;
+	case 'c':
+	case 'C':
+		res = '캐나다';
+		break;
+	default:
+		res = '대한민국';
+		break;
+	}
+	document.write(`res = ${res}`);
+</script>
+</head>
+<body>
+
+</body>
+</html>

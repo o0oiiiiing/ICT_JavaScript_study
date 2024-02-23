@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상위부모, 이전, 이후 요소</title>
+</head>
+<body>
+	<main>
+		<section>
+			<article>
+				<ul class="list">
+					<li class="item1">list1</li>
+					<li class="item2">list2</li>
+					<li class="item3">list3</li>
+					<li class="item4">list4</li>
+				</ul>
+			</article>
+		</section>
+	</main>
+	<script type="text/javascript">
+		/* 제일 가까운 상위 부모 요소 선택 : closest() */
+		// 자신부터 선택한 부모까지 보여줌
+		const li = document.querySelector("li");
+		/* console.log(li.closest("main")); */
+		console.log(li.closest("article"));
+
+		/* 형제 요소 : previousElementSibling → 이전요소 */
+		/* 형제 요소 : nextElementSibling → 이후요소 */
+		const item3 = document.querySelector(".item3");
+		console.log(item3.previousElementSibling);
+		console.log(item3.nextElementSibling);
+	</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String 클래스</title>
+<script type="text/javascript">
+	let str1 = "Hello";
+	let str2 = new String("WelCome");
+
+	// 길이 : length
+	document.write(str1.length + "<br>");
+	document.write(str2.length + "<br>");
+
+	// n번째 문자 추출 : charAt(n) * n은 index = 0부터
+	document.write(str1.charAt(0) + "<br>"); // H
+	document.write(str2.charAt(3) + "<br>"); // C
+
+	// 문자연결자 : concat(str)
+	document.write(str1.concat(str2) + "<br>");
+
+	// 해당문자나 문자열의 위치값 : indexOf('문자나 문자열', 시작위치)
+	//						 정규식 사용 못함, -1는 찾는 문자가 없다는 뜻
+	document.write(str1.indexOf('H') + "<br>"); // 0
+	document.write(str2.indexOf('H') + "<br>"); // -1
+
+	// 해당문자나 문자열의 위치값 : indexOf('문자나 문자열', 시작위치)
+	document.write(str2.indexOf('e', 2) + "<br>");
+	document.write(str2.indexOf('e', str2.indexOf('e') + 1) + "<br>");
+
+	// 해당문자나 문자열의 마지막 위치값 : lastIndexOf('문자나 문자열')
+	document.write(str2.lastIndexOf('e') + "<br>");
+
+	// 해당문자나 문자열의 위치값 : search('문자나 문자열')
+	//						  정규식 사용 가능, 두번째 인자는 없다.
+	document.write(str2.search('e') + "<br>");
+
+	// 원하는 문자열 추출 : slice와 substring
+	// slice(begin, end); substring(begin, end);
+	// end는 포함되지 않는다.
+
+	str1 = "Apple, Banana, Kiwi";
+	// 바나나 추출
+	document.write(str1.slice(7, 13) + "<br>");
+	document.write(str1.substring(7, 13) + "<br>");
+
+	// 원하는 문자열 추출 : substr(begin, 개수);
+	document.write(str1.substr(7, 6) + "<br>");
+
+	// 치환 : replace(old, new)
+	document.write(str1.replace("Banana", "Mango") + "<br>");
+	// 원본은 변경되지 않는다.
+	document.write(str1 + "<br>");
+	
+	// 대소문자 변환 : toUpperCase(), toLowerCase()
+	document.write(str1.toUpperCase() + "<br>");
+	document.write(str1.toLowerCase() + "<br>");
+	
+	// trim() : 앞뒤 공백제거
+	str1="apple, banana, kiwi";
+	str2="  apple, banana, kiwi  ";
+	document.write(str1.length + "<br>"); // 19
+	document.write(str2.length + "<br>"); // 23
+	document.write(str2.trim().length + "<br>"); // 19
+	
+	// 문자열을 배열 : split('구분자');
+	let str3 = str1.split(',');
+	for (var k in str3) {
+		document.write(str3[k] + " 사세요~<br>");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

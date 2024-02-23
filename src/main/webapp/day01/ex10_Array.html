@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열(Array)</title>
+<script type="text/javascript">
+	// 배열 : 크기 지정하지 않아도 된다. 모든 자료를 담을 수 있다.
+	//		 보통은 별도의 배열 표시를 하지 않음
+
+	// 방법1
+	let arr = new Array();
+	arr[0] = 10;
+	arr[1] = true;
+	arr[2] = 'A';
+	arr[3] = '인재개발원';
+	arr[4] = 3.14;
+
+	console.log(arr);
+
+	// 출력
+	for (let i = 0; i < arr.length; i++) {
+		document.write(`${arr[i]} &nbsp;&nbsp;&nbsp;`);
+	}
+	document.write("<hr>");
+
+	// 배열은 for..in
+	for ( let k in arr) {
+		// k는 값이 아니라 index다.
+		document.write(`${arr[k]} &nbsp;&nbsp;&nbsp;`);
+	}
+	document.write("<hr>");
+
+	// 방법2
+	let arr2 = [ '포도', 15, false, 'k', 89.8 ];
+	// 배열은 for..in
+	for ( let k in arr2) {
+		// k는 값이 아니라 index다.
+		document.write(`${arr2[k]} &nbsp;&nbsp;&nbsp;`);
+	}
+	document.write("<hr>");
+
+	// 방법3 (문자열을 배열로)
+	let myData = "java, js, html, js, spring";
+	let myArr = myData.split(',');
+	for ( let k in myArr) {
+		// k는 값이 아니라 index다.
+		document.write(`${myArr[k]} &nbsp;&nbsp;&nbsp;`);
+	}
+	document.write("<hr>");
+
+	// 배열을 문자열로 변경하자.
+	// 배열.join('구분자');
+	arr2 = [ '포도', 15, false, 'k', 89.8 ];
+	var str = arr2.join(" * * ");
+	document.write(str);
+	document.write("<hr>");
+
+	// 자바스크립트에서의 배열은 추가 삭제가 가능하다.
+	let myArr2 = [ '포도', 15, false, 'k', 89.8 ];
+	// 배열 끝에 추가
+	myArr2.push('JSP');
+	console.log(myArr2);
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]} &nbsp;&nbsp;&nbsp;`)
+	}
+	document.write("<hr>");
+
+	// 배열 마지막 삭제
+	myArr2.pop();
+	console.log(myArr2);
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]} &nbsp;&nbsp;&nbsp;`)
+	}
+	document.write("<hr>");
+
+	// 배열의 맨 처음에 추가 : unshift()
+	myArr2.unshift('JSP');
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]} &nbsp;&nbsp;&nbsp;`)
+	}
+	document.write("<hr>");
+	
+	// 배열 맨 처음 요소 삭제 : shift()
+	myArr2.shift();
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]} &nbsp;&nbsp;&nbsp;`)
+	}
+	document.write("<hr>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

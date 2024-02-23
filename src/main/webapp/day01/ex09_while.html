@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>while</title>
+<script type="text/javascript">
+	/* 
+	 초기식
+	 while (조건식) {
+	 	조건이 참일 때 실행;
+	 	증감식;
+	 }
+	
+	 초기식
+	 while (true) {
+	 	실행;
+	 	if (빠져나갈 조건) break;
+	 }
+	 */
+
+	// 1~10까지 출력하기
+	let i = 1;
+	while (i < 11) {
+		document.write(`i = ${i}<br>`);
+		i++;
+	}
+	document.write("<hr>");
+	
+	i = 1;
+	while (true) {
+		if (i >= 11)
+			break;
+		document.write(`i = ${i}<br>`);
+		i++;
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

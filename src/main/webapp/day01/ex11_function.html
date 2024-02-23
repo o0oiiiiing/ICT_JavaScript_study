@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수 : function</title>
+<script type="text/javascript">
+	// 함수와 메서드 차이 : 클래스 안에 있으면 메서드, 클래스 밖에서 별도로 존재하면 function이다.
+	// 호출해야만 함수를 실행할 수 있다.
+	// 선언함수, 익명함수 → ES6부터 지원 화살표 함수
+	// return이 존재하는 함수, return이 없는 함수
+
+	// 선언함수 : 호이스팅이 된다.
+	/*
+	function 함수명([파라미터]){
+		내용
+		[return;]
+	} 
+	
+	// 익명함수
+	let|const 변수 = function([파라미터]) {
+		내용
+		return;
+	}
+	
+	// 화살표 함수는 익명함수에서만 사용 가능
+	let|const 변수 = ([파라미터]) => {
+		내용
+		[return;]
+	}
+	
+	 */
+
+	function msg1() {
+		document.write("선언함수");
+	}
+	var msg2 = function() {
+		document.write("익명함수");
+	}
+	
+	// 호출
+	msg1();
+	document.write("<hr>")
+	
+	// 내용이 있는 그대로 나온다.
+	document.write(`${msg2}`);
+	document.write("<hr>")
+	
+	// 호출
+	msg2();
+	document.write("<hr>")
+	
+	// return, {} 생략
+	// 매개변수가 여러개 일 때
+	const add = (x, y) => x+y;
+	let res = add(3, 2);
+	document.write(add(3, 2)+"<br>");	
+	document.write(`${res}`);
+	document.write("<hr>")
+	
+	// 매개변수가 하나일 때
+	const add2 = x => x+10;
+	let res2 = add2(25);
+	document.write(add2(25)+"<br>");	
+	document.write(`${res2}`);
+	document.write("<hr>")
+	
+	// 매개변수가 없을 때 반드시 () 사용, 생략 불가
+	const add3 = () => 10;
+	let res3 = add3(25);
+	document.write(add3()+"<br>");	
+	document.write(`${res3}`);
+	document.write("<hr>")
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

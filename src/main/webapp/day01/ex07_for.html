@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>반복문 : for</title>
+<script type="text/javascript">
+	/* 
+	 일반적인 for문
+	 for (초기화식; 종료조건; 증감식) {
+	 	실행할 코드
+	 }
+	
+	// 나중에 배열 때 사용
+	for..in문
+	for ( var 내부에서 사용할 변수 in 배열) {
+		// 자바와 다르게 변수는 value가 아닌 index값을 가지고  있다.
+		실행할 코드
+	}
+	 */
+
+	for (let i = 1; i < 10; i++) {
+		document.write(`7 * ${i} = ${7*i} <br>`);
+	}
+	document.write("<hr>");
+
+	// 구구단
+	for (var i = 2; i < 10; i++) {
+		document.write(`${i}단 <br>`);
+		for (var j = 1; j < 10; j++) {
+			document.write(`${i} * ${j} = ${i*j} <br>`);
+		}
+	}
+	document.write("<hr>");
+
+	for (var i = 2; i < 10; i++) {
+		document.write(`${i}단 <br>`);
+		for (var j = 1; j < 10; j++) {
+			document.write(`${i} * ${j} = ${i*j} &nbsp;&nbsp;&nbsp;`);
+		}
+		document.write("<br>");
+	}
+	document.write("<hr>");
+
+	for (var i = 1; i < 10; i++) {
+		for (var j = 2; j < 10; j++) {
+			document.write(`${j} * ${i} = ${i*j} &nbsp;&nbsp;&nbsp;`);
+		}
+		document.write("<br>");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

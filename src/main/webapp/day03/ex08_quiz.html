@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문제</title>
+<style type="text/css">
+ul {
+	list-style-type: none;
+}
+
+li {
+	font-size: 20px;
+	padding: 3px;
+}
+
+.check {
+	color: #ccc;
+	padding-right: 1rem;
+}
+
+div {
+	border: 1px solid #ccc;
+	padding: 10px;
+	width: 300px;
+}
+</style>
+</head>
+<body>
+	<div>
+		<h1>할 일 목록</h1>
+		<ul>
+			<!-- HTML Entity List : https://www.freeformatter.com/html-entities.html -->
+			<li><span class="check">&#8730;</span>할 일 1</li>
+			<li><span class="check">&#8730;</span>할 일 2</li>
+			<li><span class="check">&#8730;</span>할 일 3</li>
+			<li><span class="check">&#8730;</span>할 일 4</li>
+			<li><span class="check">&#8730;</span>할 일 5</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		/* 내가 한 것
+		let checks = document.querySelectorAll(".check");
+		
+		checks.forEach(check => {
+			check.addEventListener('click', (e) => {
+				let li = check.parentNode;
+				li.style.textDecoration = "line-through";
+				li.style.color = "#ccc";
+			});
+		}); */
+		
+		let chk = document.querySelectorAll(".check");
+		for (let k of chk) {
+			k.addEventListener("click", ()=>{
+				e.target.parentNode.style.color="#ccc";
+				e.target.parentNode.style.textDecoration = "line-through";
+			});
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+#container {
+	width: 600px;
+	margin: 0px auto;
+}
+
+#prod-pic, #desc {
+	float: left;
+}
+
+#prod-pic {
+	margin: 20px 20px auto 10px;
+	padding: 0;
+}
+
+#small-pic {
+	margin-top: 20px;
+}
+
+.small {
+	width: 60px;
+	height: 60px;
+	float: left;
+	margin-right: 10px;
+}
+
+#desc ul {
+	list-style-type: none;
+	font-size: 1rem;
+	line-height: 1.8;
+}
+
+.bluetext {
+	color: blue;
+	font-weight: bold;
+}
+
+#view {
+	text-decoration: none;
+	font-size: 0.9rem;
+	color: blue;
+	margin-left: 40px;
+}
+
+#detail {
+	clear: both;
+	display: none;
+	padding: 20px;
+}
+
+button {
+	margin: 10px 0px;
+	padding: 10px 100px;
+}

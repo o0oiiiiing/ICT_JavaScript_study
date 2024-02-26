@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--
+   요소(Element=Node)생성 : createElement 
+   자식요소에 추가하기  :  appendChild
+   삽입위치를 지정해서  :  insertBefore(삽입할요소, 삽입할 위치)
+   해당 요소 삭제     : remove
+   자식 요소 삭제    : 부모노드.removeChild(자식노드)		
+   지정된 노드의 부모를 반환 :  parentNode
+  -->
+	<h2 id="title">운동</h2>
+	<form name="myForm">
+		<!-- 자동 완성 기능 해제 : autocomplete="off" -->
+		<input type="text" name="myText" placeholder="운동을 입력해주세요"
+			autocomplete="off">
+		<button id="before">앞에 추가</button>
+		<button id="btn">추가</button>
+		<button id="btn_remove">제거</button>
+	</form>
+
+	<ul class="list">
+		<li class="item" id="target">스쿼트
+			<button class="remove_btn">X</button>
+		</li>
+	</ul>
+	<!-- 
+  <script type="text/javascript">
+    let li = document.createElement("li");
+    let ul = document.querySelector(".list");
+    li.textContent = '줄넘기';
+    ul.appendChild(li);
+  </script>
+   -->
+
+	<script type="text/javascript">
+    let btn = document.querySelector("#btn");
+    let inputBox = document.querySelector("input");
+    let bef_btn = document.querySelector("#before");
+    
+    /* btn.addEventListener('click',function(){}); */
+	btn.addEventListener('click',(e)=>{
+	   // 새로고침 방지	
+	   e.preventDefault();
+	   
+	   let li = document.createElement("li");
+	   let ul = document.querySelector(".list");
+	  
+	   let btn = document.createElement("button");
+	   btn.textContent = 'X';
+	   
+	  /* classList-classList객체를 이용하여서 class를 수정(add=>추가, remove=>삭제) */
+	  /*  btn.classList.add('remove_btn'); */
+	   btn.setAttribute('class','remove_btn'); 
+	   
+	   li.textContent = inputBox.value;
+	   li.appendChild(btn);
+	   ul.appendChild(li);
+	   inputBox.value = "";
+	   inputBox.focus();
+	   
+	   btn.addEventListener('click',(e)=>{
+		   /* e.target.parentNode  => 이벤트가 발생한 요소의 부모 */
+		 e.target.parentNode.remove();
+		 inputBox.value = "";
+		 inputBox.focus();
+	   });
+    });
+    
+	bef_btn.addEventListener('click',(e)=>{
+	  // 새로고침 방지	
+	   e.preventDefault();
+		   
+	   let li = document.createElement("li");
+	   let ul = document.querySelector(".list");
+	   let targetLi = document.querySelector("#target");
+	   
+	   li.textContent = inputBox.value;
+	   
+	   let btn = document.createElement("button");
+	   btn.textContent = 'X';
+ 	   btn.setAttribute('class','remove_btn'); 
+	   li.appendChild(btn);
+	   
+	   ul.insertBefore(li, targetLi);
+	   inputBox.value = "";
+	   inputBox.focus();
+	   
+	   btn.addEventListener('click',(e)=>{
+		   /* e.target.parentNode  => 이벤트가 발생한 요소의 부모 */
+		   e.target.parentNode.remove();
+		   inputBox.value = "";
+		   inputBox.focus();
+	   });
+	});
+	
+	
+    /* 
+	btn_remove.addEventListener("click",(e)=>{
+		// 새로고침 방지	
+		e.preventDefault();
+		let targetLi = document.querySelector("#target");
+		targetLi.remove();
+	});
+	 */
+	 
+	let remove_btn = document.querySelector(".remove_btn")
+	remove_btn.addEventListener("click",(e)=>{
+		// 새로고침 방지	
+		e.preventDefault();
+		let targetLi = document.querySelector("#target");
+		targetLi.remove();
+	});
+	 
+  </script>
+</body>
+</html>

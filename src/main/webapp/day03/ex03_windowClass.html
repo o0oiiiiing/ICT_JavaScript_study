@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>문서를 열면 팝업 창이 표시 됩니다.</p>
+	<script type="text/javascript">
+		/* 팝업 차단 되었을 때 */
+		let newWin = window.open("ex03_notice.html", "",
+				"top=200px, width=500px, height=400px");
+		/* 팝업이 차단되면 null이 된다 */
+		console.log(newWin);
+		if (newWin == null) {
+			alert("팝업이 차단되었습니다. 팝업 차단을 해제해 주세요.")
+		}
+	</script>
+</body>
+</html>

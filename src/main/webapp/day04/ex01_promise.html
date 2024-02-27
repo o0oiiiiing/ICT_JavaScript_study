@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+promise 객체 : 자바스크립트에서 비동기 작업할 때 사용하는 객체
+		 	  어떤 작업을 처리하고 결과를 받겠다는 약속
+		  	  비동기 작업이 맞이할 미래의 완료 또는 실패와 그 결과 값을 나타냅니다.
+const myPromise = new Promise((resolve, reject)=>{
+	어떤 작업;
+});
+ -->
+	<script type="text/javascript">
+	const myPromise = new Promise((resolve, reject)=>{
+		setTimeout(() => {
+			// 대기(pending) : 비동기 작업 처리 중
+			const msg = prompt('hello를 입력해 주세요');
+			// 실제로는 if ~ else 사용 X
+			if (msg === "hello") {
+				// 정상적인 결과 값을 반환 (이행)
+				resolve("성공");
+			} else {
+				// 비정상적인 결과 값을 반환 (거부)
+				reject("실패");
+			}
+		}, 2000);
+	});	
+	
+	myPromise
+	.then((result)=>{
+		console.log("result : ", result);
+	})
+	.catch((err)=>{
+		console.log("err: ", err);
+	})
+	.finally(()=>{
+		console.log("finally~");		
+	})
+	/* 
+	상태 : 
+	- 대기 : 비동기 작업 처리 중
+	- 이행 : 비동기 작업이 정상적인 처리가 된 경우
+	- 거부 : 비동기 작업이 정상적인 처리가 되지 않은 경우
+	
+	메서드
+	- then() : 이행 되었을 때 실행 되는 메서드
+	- catch() : 거부 되었을 때 실행 되는 메서드
+	- finally() : then, catch 상관없이 항상 실행 되는 메서드
+	*/
+	</script>
+</body>
+</html>

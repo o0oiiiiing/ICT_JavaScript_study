@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+function fetchUser(){
+	const url = 'https://jsonplaceholder.typicode.com/users/1';
+	return fetch(url).then((response)=>{return response.json});
+}
+
+function fetchTodo(){
+	const url = 'https://jsonplaceholder.typicode.com/todos/1';
+	return fetch(url).then((response)=>{return response.json});	
+}
+
+async function logTodoTitle(){
+	console.log("1");
+	const user = await fetchUser();
+	console.log("2");
+	if (user.id === 1) {
+		const todo = await fetchTodo(2);
+		// console.log(todo.title);
+		console.log(todo);
+	}
+	console.log("3");
+}
+
+console.log("start");
+logTodoTitle();
+console.log("end");
+</script>
+</body>
+</html>
